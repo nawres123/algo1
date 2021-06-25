@@ -1,0 +1,25 @@
+ALGORITHM read_a_sentence
+VAR
+    c: char;
+    v,w,l : INTEGER;
+     vow : ARRAY_OF char[12];
+BEGIN
+    l := 0;
+    w := 1;
+    v := 0;
+    vow := ['A','a','E','e','I','i','O','o','U','u','Y','y'];
+    REPEAT
+      read(c);
+      IF (c= ' ') THEN
+          w := w+1;
+      END_IF
+      IF (c in vow) THEN
+          v := v+1;
+      END_IF
+      l := l+1;
+    UNTIL (c = '.')
+    writeln ("The length of the sentence=", l);
+        writeln ("The number of words in the sentence=", w);
+                writeln ("The number of vowels in the sentence=", v);
+
+END
